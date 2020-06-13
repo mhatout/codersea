@@ -17,7 +17,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        
         $companies = Company::latest()->paginate(10);
         return view('companies.layouts.list', compact('companies','companies'))
                             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -51,7 +51,6 @@ class CompanyController extends Controller
 
         $image = $request->file('logo');
         $filename = time() . '.' . $image->getClientOriginalExtension();
-        // Image::make($image)->resize(300, 300)->save( storage_path('/Storage/app/public/' . $filename ) );
 
         $path = $request->file('logo')->storeAs('/', $filename, 'public');
 

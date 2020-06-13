@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Employee;
 use App\Company;
+use Carbon\Carbon;
+use Mail;
 
 class EmployeeController extends Controller
 {
@@ -105,9 +107,6 @@ class EmployeeController extends Controller
         $request->validate([
             'f_name'=>'required',
             'l_name'=>'required',
-            // 'company'=>'exists:companies,id,' . $request->get('company'),
-            // 'email'=> 'required|unique:employees',
-            // 'phone'=> 'regex:/(01)[0-9]{9}/'
         ]);
 
 
