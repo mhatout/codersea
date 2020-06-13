@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('companies','CompanyController');
+
+Route::resource('employees','EmployeeController');
+
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from Codersea Laravel Project',
+        'body' => 'New Company Added'
+    ];
+   
+    \Mail::to('muhamad.atout@gmail.com')->send(new \App\Mail\MyTestMail($details));
+   
+    dd("Email is Sent.");
+});
