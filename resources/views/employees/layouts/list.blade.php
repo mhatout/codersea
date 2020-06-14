@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         <div class="col-lg-11">
-                <h2>Codersea Employees</h2>
+                <h2>Employees List</h2>
         </div>
         <div class="col-lg-1">
-            <a class="btn btn-success" href="{{ route('employees.create') }}">Add</a>
+            <a class="btn btn-success" href="{{ route('employees.create') }}">Create New Employee</a>
         </div>
     </div>
  

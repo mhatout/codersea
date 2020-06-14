@@ -13,22 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth'); */
 
-Route::resource('companies','CompanyController');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('employees','EmployeeController');
+Route::resource('companies','CompanyController')->middleware('auth');
 
-Route::get('send-mail', function () {
-   
-    $details = [
-        'title' => 'Mail from Codersea Laravel Project',
-        'body' => 'New Company Added'
-    ];
-   
-    \Mail::to('muhamad.atout@gmail.com')->send(new \App\Mail\MyTestMail($details));
-   
-    dd("Email is Sent.");
-});
+Route::resource('employees','EmployeeController')->middleware('auth');
+
+Auth::routes();
+

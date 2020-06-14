@@ -67,7 +67,7 @@ class CompanyController extends Controller
         $data['body'] = $company->name.' added to your system';    
         Mail::send('emails.newCompanyMail', $data, function ($message) {
             $message->from('example@laravel.com', 'Codersea Laravel Project');
-            $message->to('muhamad.atout@gmail.com')->subject('New Company');
+            $message->to('admin@admin.com')->subject('New Company');
         });
 
         return redirect('/companies')->with('success', 'Company has been added');

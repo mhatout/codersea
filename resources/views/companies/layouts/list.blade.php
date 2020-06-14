@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         <div class="col-lg-11">
-                <h2>Codersea Companies</h2>
+                <h2>Companies List</h2>
         </div>
         <div class="col-lg-1">
-            <a class="btn btn-success" href="{{ route('companies.create') }}">Add</a>
+            <a class="btn btn-success" href="{{ route('companies.create') }}">Create New Company</a>
         </div>
     </div>
  
@@ -33,7 +33,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $company->name }}</td>
                 <td>{{ $company->email }}</td>
-                <td>{{ $company->logo }}</td>
+                <td><img width="50" height="50" src="{{ url('storage/'.$company->logo) }}" alt="{{$company->name}} Logo" title=""></td>
                 <td>{{ $company->website }}</td>
                 <td>
                     <form action="{{ route('companies.destroy',$company->id) }}" method="POST">

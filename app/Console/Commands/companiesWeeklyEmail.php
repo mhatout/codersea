@@ -46,8 +46,7 @@ class companiesWeeklyEmail extends Command
             $data['employees'] = $employees;    
             Mail::send('emails.companiesWeeklyMail', $data, function ($message) use ($company) {
                 $message->from('example@laravel.com', 'Codersea Laravel Project');
-                // $message->to($company->email)
-                $message->to('muhamad.atout@gmail.com')
+                $message->to($company->email)
                     ->subject($company->name . ' New Employees');
             });
         }
