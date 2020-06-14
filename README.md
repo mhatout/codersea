@@ -21,7 +21,7 @@
     - Use Laravel’s validation function, using Request classes. DONE
     - Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page. DONE
     - Use Laravel make:auth as default Bootstrap-based design theme, but remove ability to register. DONE
-    - Email notification: send email whenever new company is entered. DONE (you will need to access companies controller file line 70 and change the recieving          email to a working email to recieve notification)  
+    - Email notification: send email whenever new company is entered. DONE (you will need to access companies controller file line 70 and change the recieving email to a working email to recieve notification)  
     - Use Laravel commands and Task Scheduling to send weekly mail to Companies which in your system with new Employees entered in this week. Done 
        (for the last task you will need to add the following line Cron entry to your server to run the Scheduler properly
         "* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1" )
