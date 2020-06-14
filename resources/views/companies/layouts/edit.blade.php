@@ -20,7 +20,7 @@
             </ul>
         </div>
     @endif
-    <form method="post" action="{{ route('companies.update',$company->id) }}" >
+    <form method="post" action="{{ route('companies.update',$company->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-group">
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="logo">Logo:</label>
-            <input class="form-control" id="logo" name="logo" placeholder="Enter Logo" value="{{$company->logo}}"></input>
+            <input type="file" id="logo" name="logo" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
         </div>
         <div class="form-group">
             <label for="website">Logo:</label>

@@ -111,14 +111,18 @@ class CompanyController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=> 'required',
-            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|min:100'
+            'logo' => 'required|dimensions:min_width=100,min_height=100'
         ]);
 
+        $image = $request->file('logo');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+
+        $path = $request->file('logo')->storeAs('/', $filename, 'public');
 
         $company = Company::find($id);
         $company->name = $request->get('name');
         $company->email = $request->get('email');
-        $company->logo = $request->get('logo');
+        $company->logo = $path;
         $company->website = $request->get('website');
 
         $company->update();

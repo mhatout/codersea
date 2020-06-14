@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <th>Logo:</th>
-            <td>{{ $company->logo }}</td>
+            <td><img width="50" height="50" src="{{ url('storage/'.$company->logo) }}" alt="{{$company->name}} Logo" title=""></td>
         </tr>
         <tr>
             <th>Website:</th>
